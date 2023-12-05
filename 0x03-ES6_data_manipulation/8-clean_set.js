@@ -1,13 +1,14 @@
-export default function cleanSet(set, startString) {
-  // Use Array.from to convert the set to an array
-  const arr = Array.from(set);
+const cleanSet = (set, startString) => {
+  if (!startString) {
+    return '';
+  }
 
-  // Use filter to keep only the values starting with startString
-  const filteredArray = arr.filter((value) => value.startsWith(startString));
+  const cleanedValues = Array.from(set)
+    .filter((value) => value && value.startsWith(startString))
+    .map((value) => value && value.slice(startString.length))
+    .join('-');
 
-  // Use map to append the rest of the string
-  const cleanedValues = filteredArray.map((value) => value.slice(startString.length));
+  return cleanedValues;
+};
 
-  // Join the values with -
-  return cleanedValues.join('-');
-}
+export default cleanSet;
