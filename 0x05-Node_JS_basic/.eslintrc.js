@@ -1,8 +1,8 @@
 module.exports = {
   "env": {
-      "browser": true,
-      "es6": true,
-      "jest": true,
+      browser: true,
+      es6: true,
+      jest: true,
   },
   "extends": "eslint:recommended",
   "globals": {
@@ -24,11 +24,5 @@ module.exports = {
       'LabeledStatement',
       'WithStatement',
     ],
-  },
-  overrides:[
-    {
-      files: ['*.js'],
-      excludedFiles: 'babel.config.js',
-    }
-  ]
+  }
   };
